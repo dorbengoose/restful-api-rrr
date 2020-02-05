@@ -53,5 +53,4 @@ api.add_resource(UserRegister, '/register')
 #cuando se llama cualquier end point, va y ejecuta lo especificado en cada metodo
 # por ejemplo cuando se accesa a /register, python va y ejecuta lo especificado en UserRegister
 if __name__ == "__main__":
-    db.init_app(app)
     app.run(debug=True)
