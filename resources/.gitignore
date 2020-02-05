@@ -1,0 +1,6 @@
+__pycache__/
+*.__pyc
+./Git-instructions.txt
+./SQLAlchemy.txt
+./test.py
+./create_tables.py
