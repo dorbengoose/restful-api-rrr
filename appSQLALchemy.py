@@ -1,7 +1,7 @@
 
 # este es una copia del ejercicio 01, pero con mejoras conforme a la leccion en turno
 # # pip install Flask-JWT  JSON WEB TOKEN , encoding data
-
+import os
 
 from flask import Flask       #quitamos request
 from flask_restful import Api  #quitamos Resource y reqparse
@@ -18,7 +18,7 @@ from resources.store import Store, StoreList
 
 app = Flask(__name__)
 # Hay que especificarle a SQL ALCHEMY donde encontrar la base de datos
-app.config['SQLALCHEMY_DATABASE_URI']= 'sqlite:///data.db' #Al final de esta ruta es donde se especifica el tipo de Base : SQL, Postgre o bien sqlite3
+app.config['SQLALCHEMY_DATABASE_URI']= os.environ.get('DATABASE_URL','sqlite:///data.db') #Al final de esta ruta es donde se especifica el tipo de Base : SQL, Postgre o bien sqlite3
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False  # de forma que un objeto cambie, pero no se guarde, la extension no la tome a modificacion
 # insertar una llave
 app.secret_key = 'ricardo'
